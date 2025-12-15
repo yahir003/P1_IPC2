@@ -19,3 +19,12 @@ class ListaSimple:
             while actual.siguiente is not None:
                 actual = actual.siguiente
             actual.siguiente = nuevo
+
+    def contar(self):
+        actual = self.primero
+        c = 0
+        while actual:
+            c += 1
+            actual = actual.siguiente
+        return c
+

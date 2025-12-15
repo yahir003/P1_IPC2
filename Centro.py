@@ -47,5 +47,5 @@ def cargar_centros_a_lista(ruta, lista_centros):
         ram = int(capacidad.find('ram').text)
         almacenamiento = int(capacidad.find('almacenamiento').text)
 
-        centro = Centro(id, cpu, ram, almacenamiento)
+        centro = CentroDatos(id, cpu, ram, almacenamiento)
         lista_centros.insertar(centro)

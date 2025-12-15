@@ -69,3 +69,5 @@ def menu_centros(lista_centros):
             centro_con_mas_recursos(lista_centros)
         elif op == '4':
             break
+        else:
+            print('Opcion no valida intente de nuevo...')

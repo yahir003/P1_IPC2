@@ -9,7 +9,7 @@ def cargar_xml(tipo):
     
     try:
         with open(ruta_archivo, 'r', encoding='utf-8'):
-         pass
+            pass
         return ruta_archivo
     
     except Exception as e:
