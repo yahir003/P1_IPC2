@@ -1,4 +1,7 @@
 import xml.etree.ElementTree as ET
+from Listas.Listasimple import ListaSimple
+
+
 class CentroDatos:
     def __init__(self, id, cpu, ram, almacenamiento):
         self.id = id
@@ -10,6 +13,8 @@ class CentroDatos:
         self.ram_disponible = int(ram)
         self.alm_disponible = int(almacenamiento)
         self.vms_activas = 0
+
+        self.lista_vms = ListaSimple()
 
     def mostrar_info(self):
         cpu_usado = self.cpu_total - self.cpu_disponible
@@ -27,25 +32,34 @@ class CentroDatos:
         print(f'CPU usada (%): {cpu_p:.2f}%')
         print('*' * 40)
 
-def cargar_centros_a_lista(ruta, lista_centros):
-    tree = ET.parse(ruta)
-    root = tree.getroot()
+    def cargar_centros_a_lista(ruta, lista_centros):
+        tree = ET.parse(ruta)
+        root = tree.getroot()
 
-    configuracion = root.find('configuracion')
-    if configuracion is None:
-        return
+        configuracion = root.find('configuracion')
+        if configuracion is None:
+            return
 
-    centros = configuracion.find('centrosDatos')
-    if centros is None:
-        return
+        centros = configuracion.find('centrosDatos')
+        if centros is None:
+            return
 
-    for c in centros.findall('centro'):
-        id = c.get('id')
-        capacidad = c.find('capacidad')
+        for c in centros.findall('centro'):
+            id = c.get('id')
+            capacidad = c.find('capacidad')
 
-        cpu = int(capacidad.find('cpu').text)
-        ram = int(capacidad.find('ram').text)
-        almacenamiento = int(capacidad.find('almacenamiento').text)
+            cpu = int(capacidad.find('cpu').text)
+            ram = int(capacidad.find('ram').text)
+            almacenamiento = int(capacidad.find('almacenamiento').text)
 
-        centro = Centro(id, cpu, ram, almacenamiento)
-        lista_centros.insertar(centro)
+            centro = CentroDatos(id, cpu, ram, almacenamiento)
+            lista_centros.insertar(centro)
+
+    
+    def buscar_vm(self, vm_id):
+        actual = self.lista_vms.primero
+        while actual:
+            if actual.dato.id == vm_id:
+                return actual.dato
+            actual = actual.siguiente
+        return None

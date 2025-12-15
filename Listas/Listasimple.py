@@ -19,3 +19,11 @@ class ListaSimple:
             while actual.siguiente is not None:
                 actual = actual.siguiente
             actual.siguiente = nuevo
+    
+    def buscar_por_id(self, id):
+     actual = self.primero
+     while actual:
+            if actual.dato.id == id:
+                return actual.dato
+            actual = actual.siguiente
+            return None
