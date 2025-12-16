@@ -1,0 +1,8 @@
+digraph ColaSolicitudes {
+	rankdir=LR
+	N1 [label="Solicitud REQ001
+Prioridad: 8" fillcolor=lightcoral shape=box style=filled]
+	N2 [label="Solicitud REQ002
+Prioridad: 5" fillcolor=lightcoral shape=box style=filled]
+	N1 -> N2
+}

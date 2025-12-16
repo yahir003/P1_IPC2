@@ -1,0 +1,8 @@
+// Reporte de Contenedores por VM
+digraph {
+	rankdir=TB
+	VM002 [label="VM VM002
+SO: Windows Server 2022" fillcolor=lightblue shape=box style=filled]
+	sin_cont [label="Sin contenedores" shape=ellipse]
+	VM002 -> sin_cont
+}
