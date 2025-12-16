@@ -1,0 +1,9 @@
+digraph Centros {
+	rankdir=LR
+	DC001 [label="Centro DC001
+CPU:64/64
+RAM:256/256" fillcolor=lightgreen shape=box style=filled]
+	DC002 [label="Centro DC002
+CPU:32/32
+RAM:128/128" fillcolor=lightgreen shape=box style=filled]
+}

@@ -2,9 +2,6 @@ import xml.etree.ElementTree as ET
 from Centro import CentroDatos
 from Utiles.Solicitud import Solicitudes
 
-
-
-
 def cargar_xml(tipo):
     nombre_archivo = input(f"Ingrese el nombre del archivo XML de {tipo} (ejemplo: {tipo}.xml): ").strip()
     if nombre_archivo == '':
@@ -205,8 +202,7 @@ def cargar_centros_a_lista(ruta, lista_centros):
 
         
 
-
-def cargar_solicitudes_desde_xml(ruta, lista_solicitudes):
+def cargar_solicitudes_desde_xml(ruta, lista_solicitudes, cola_solicitudes):
     tree = ET.parse(ruta)
     root = tree.getroot()
 
@@ -222,14 +218,17 @@ def cargar_solicitudes_desde_xml(ruta, lista_solicitudes):
         tipo = sol.find('tipo').text
         prioridad = sol.find('prioridad').text
         recursos = sol.find('recursos')
+
         cpu = recursos.find('cpu').text
         ram = recursos.find('ram').text
         almacenamiento = recursos.find('almacenamiento').text
         tiempo = sol.find('tiempoEstimado').text
 
         nueva = Solicitudes(
-            sol_id, cliente, tipo,
-            prioridad, cpu, ram, almacenamiento, tiempo
+            sol_id, cliente, tipo, prioridad,
+            cpu, ram, almacenamiento, tiempo
         )
+
         lista_solicitudes.insertar(nueva)
+        cola_solicitudes.insertar(nueva)
 

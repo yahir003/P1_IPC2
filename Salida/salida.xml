@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<resultadoCloudSync>
+  <timestamp>2025-12-16T17:16:53.910570</timestamp>
+  <estadoCentros>
+    <centro id="DC001">
+      <nombre>DC001</nombre>
+      <recursos>
+        <cpuTotal>64</cpuTotal>
+        <cpuDisponible>64</cpuDisponible>
+        <cpuUtilizacion>0.00%</cpuUtilizacion>
+        <ramTotal>256</ramTotal>
+        <ramDisponible>256</ramDisponible>
+        <ramUtilizacion>0.00%</ramUtilizacion>
+      </recursos>
+      <cantidadVMs>2</cantidadVMs>
+      <cantidadContenedores>0</cantidadContenedores>
+    </centro>
+    <centro id="DC002">
+      <nombre>DC002</nombre>
+      <recursos>
+        <cpuTotal>32</cpuTotal>
+        <cpuDisponible>32</cpuDisponible>
+        <cpuUtilizacion>0.00%</cpuUtilizacion>
+        <ramTotal>128</ramTotal>
+        <ramDisponible>128</ramDisponible>
+        <ramUtilizacion>0.00%</ramUtilizacion>
+      </recursos>
+      <cantidadVMs>0</cantidadVMs>
+      <cantidadContenedores>0</cantidadContenedores>
+    </centro>
+  </estadoCentros>
+  <estadisticas>
+    <vmsActivas>2</vmsActivas>
+    <contenedoresTotales>0</contenedoresTotales>
+  </estadisticas>
+</resultadoCloudSync>

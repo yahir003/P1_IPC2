@@ -50,13 +50,14 @@ def procesar_solicitudes(lista_solicitudes, lista_centros):
         actual = actual.siguiente
 
 
-def menu_solicitudes(lista_solicitudes, lista_centros):
+def menu_solicitudes(lista_solicitudes, lista_centros,cola):
     while True:
         print("*" * 20, "GESTIÓN DE SOLICITUDES", "*" * 20)
         print("1. Listar solicitudes")
         print("2. Buscar solicitud por ID")
         print("3. Procesar solicitudes")
-        print("4. Volver")
+        print("4. Mostrar cola de solicitudes")
+        print("5 Volver")
 
         op = input("Seleccione: ")
 
@@ -67,4 +68,6 @@ def menu_solicitudes(lista_solicitudes, lista_centros):
         elif op == "3":
             procesar_solicitudes(lista_solicitudes, lista_centros)
         elif op == "4":
+            cola.mostrar()
+        elif op == "5":
             break
